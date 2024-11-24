@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Lessons</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("images/bg_1.jpg");
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .canvas-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #drawingCanvas {
+            border: 2px solid black;
+            background-color: #f8f9fa;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .row {
+            margin-top: 150px;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 80px;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #shape {
+            color: chocolate;
+            background-color: #e19538;
+        }
+
+        /* Hover effect for cards */
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Select a Lesson</h1>
+
+        <!-- Card Group for selection -->
+        <div class="row">
+            <!-- Card for Poems -->
+            <div class="col-md-4">
+                <div class="card" data-toggle="modal" data-target="#poemsModal">
+                    <img src="https://via.placeholder.com/350x200/4CAF50/FFFFFF?text=Poems" class="card-img-top"
+                        alt="Poems">
+                    <div class="card-body">
+                        <h5 class="card-title">Poems</h5>
+                        <p class="card-text">Explore beautiful poems.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for Stories -->
+            <div class="col-md-4">
+                <div class="card" data-toggle="modal" data-target="#storiesModal">
+                    <img src="https://via.placeholder.com/350x200/FFA500/FFFFFF?text=Stories" class="card-img-top"
+                        alt="Stories">
+                    <div class="card-body">
+                        <h5 class="card-title">Stories</h5>
+                        <p class="card-text">Read engaging and insightful stories.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for Grammar -->
+            <div class="col-md-4">
+                <div class="card" data-toggle="modal" data-target="#grammarModal">
+                    <img src="https://via.placeholder.com/350x200/2196F3/FFFFFF?text=Grammar" class="card-img-top"
+                        alt="Grammar">
+                    <div class="card-body">
+                        <h5 class="card-title">Grammar</h5>
+                        <p class="card-text">Learn key grammar concepts and rules.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Poems Modal -->
+    <div class="modal fade" id="poemsModal" tabindex="-1" role="dialog" aria-labelledby="poemsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="poemsModalLabel">Poems</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <b>The Crocodile By Lewis Carroll</b><br>
+                    <i>How doth the little crocodile
+                    Improve his shining tail,
+                    And pour the waters of the Nile
+                    On every golden scale!
+                    How cheerfully he seems to grin,
+                    How neatly spreads his claws,
+                    And welcomes little fishes in,
+                    With gently smiling jaws!</i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stories Modal -->
+    <div class="modal fade" id="storiesModal" tabindex="-1" role="dialog" aria-labelledby="storiesModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="storiesModalLabel">Stories</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Read stories that captivate your imagination and inspire learning.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grammar Modal -->
+    <div class="modal fade" id="grammarModal" tabindex="-1" role="dialog" aria-labelledby="grammarModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="grammarModalLabel">Grammar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Master grammar rules to enhance your communication skills.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <!-- Full version of jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

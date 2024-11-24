@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes Drawing with Voice Guidance</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("./images/bg_1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .canvas-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #drawingCanvas {
+            border: 2px solid black;
+            background-color: #f8f9fa;
+            display: block;
+            margin: 0 auto;
+        }
+        .controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .btn {
+            font-size: 18px;
+            margin: 10px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Draw Shapes Step by Step</h1>
+
+        <!-- Canvas Area -->
+        <div class="canvas-container">
+            <canvas id="drawingCanvas" width="600" height="600"></canvas>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="circleButton" class="btn btn-primary">Draw Circle</button>
+            <button id="rectangleButton" class="btn btn-success">Draw Rectangle</button>
+            <button id="triangleButton" class="btn btn-danger">Draw Triangle</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Canvas and context
+        const canvas = document.getElementById("drawingCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Speak function for voice guidance
+        function speak(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(speech);
+        }
+
+        // Circle Drawing Process
+        function drawCircle() {
+            speak("Step 1: Draw a circle in the center of the canvas.");
+            ctx.beginPath();
+            ctx.arc(300, 200, 80, 0, 2 * Math.PI);
+            ctx.fillStyle = "blue";
+            ctx.fill();
+            speak("Circle drawing is complete.");
+        }
+
+        // Rectangle Drawing Process
+        function drawRectangle() {
+            speak("Step 1: Draw a rectangle in the center of the canvas.");
+            ctx.fillStyle = "green";
+            ctx.fillRect(200, 150, 200, 100);
+            speak("Rectangle drawing is complete.");
+        }
+
+        // Triangle Drawing Process
+        function drawTriangle() {
+            speak("Step 1: Draw a triangle with three points on the canvas.");
+            ctx.beginPath();
+            ctx.moveTo(300, 100);
+            ctx.lineTo(200, 300);
+            ctx.lineTo(400, 300);
+            ctx.closePath();
+            ctx.fillStyle = "red";
+            ctx.fill();
+            speak("Triangle drawing is complete.");
+        }
+
+        // Event listeners for buttons
+        document.getElementById("circleButton").addEventListener("click", () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+            drawCircle();
+        });
+
+        document.getElementById("rectangleButton").addEventListener("click", () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+            drawRectangle();
+        });
+
+        document.getElementById("triangleButton").addEventListener("click", () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+            drawTriangle();
+        });
+    </script>
+</body>
+</html>

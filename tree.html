@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("./images/bg_2.jpg");
+        }
+        .canvas-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #drawingCanvas {
+            border: 2px solid black;
+            background-color: #f8f9fa;
+            display: block;
+            margin: 0 auto;
+        }
+        .controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .btn-primary {
+            font-size: 18px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Draw a Tree Step by Step</h1>
+
+        <!-- Canvas Area -->
+        <div class="canvas-container">
+            <canvas id="drawingCanvas" width="600" height="600"></canvas>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="startButton" class="btn btn-primary">Start Drawing</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Canvas and context
+        const canvas = document.getElementById("drawingCanvas");
+        const ctx = canvas.getContext("2d");
+        const startButton = document.getElementById("startButton");
+
+        // Steps and functions for tree drawing
+        const steps = [
+            "Step 1: Draw a rectangle for the tree trunk in the center of the canvas.",
+            "Step 2: Add a large circle above the trunk for the main foliage.",
+            "Step 3: Draw two smaller circles on either side of the main foliage.",
+            "Step 4: Add a few smaller circles to fill the foliage.",
+            "Step 5: Color the trunk brown and the foliage green."
+        ];
+
+        const drawFunctions = [
+            // Draw the trunk
+            function () {
+                ctx.fillStyle = "saddlebrown";
+                ctx.fillRect(270, 250, 60, 150);
+            },
+            // Draw the main foliage
+            function () {
+                ctx.fillStyle = "forestgreen";
+                ctx.beginPath();
+                ctx.arc(300, 200, 80, 0, 2 * Math.PI);
+                ctx.fill();
+            },
+            // Draw side foliage
+            function () {
+                ctx.beginPath();
+                ctx.arc(220, 200, 60, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(380, 200, 60, 0, 2 * Math.PI);
+                ctx.fill();
+            },
+            // Draw smaller foliage circles
+            function () {
+                ctx.beginPath();
+                ctx.arc(260, 150, 40, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(340, 150, 40, 0, 2 * Math.PI);
+                ctx.fill();
+            },
+            // Finalize with colors
+            function () {
+                ctx.fillStyle = "saddlebrown";
+                ctx.fillRect(270, 250, 60, 150); // Trunk
+                ctx.fillStyle = "forestgreen";
+                ctx.beginPath();
+                ctx.arc(300, 200, 80, 0, 2 * Math.PI); // Main foliage
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(220, 200, 60, 0, 2 * Math.PI); // Left foliage
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(380, 200, 60, 0, 2 * Math.PI); // Right foliage
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(260, 150, 40, 0, 2 * Math.PI); // Top left
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(340, 150, 40, 0, 2 * Math.PI); // Top right
+                ctx.fill();
+            }
+        ];
+
+        let currentStep = 0;
+
+        // Speak text function
+        function speak(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(speech);
+        }
+
+        // Move to the next step
+        function nextStep() {
+            if (currentStep < steps.length) {
+                speak(steps[currentStep]); // Speak current step
+                drawFunctions[currentStep](); // Execute drawing function
+                currentStep++;
+                if (currentStep < steps.length) {
+                    setTimeout(nextStep, 5000); // Wait 5 seconds for the next step
+                } else {
+                    speak("Congratulations! You've finished drawing the tree!");
+                }
+            }
+        }
+
+        // Start button click event
+        startButton.addEventListener("click", () => {
+            currentStep = 0; // Reset to the first step
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+            nextStep();
+        });
+    </script>
+</body>
+</html>

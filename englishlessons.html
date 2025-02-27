@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Lessons</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("images/bg_1.jpg");
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .canvas-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #drawingCanvas {
+            border: 2px solid black;
+            background-color: #f8f9fa;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .row {
+            margin-top: 150px;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 80px;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #shape {
+            color: chocolate;
+            background-color: #e19538;
+        }
+
+        /* Hover effect for cards */
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Select a Lesson</h1>
+
+        <!-- Card Group for selection -->
+        <div class="row">
+            <!-- Card for Poems -->
+            <div class="col-md-4">
+                <div class="card" data-toggle="modal" data-target="#poemsModal">
+                    <img src="./images/poems.jpg" class="card-img-top"
+                        alt="Poems">
+                    <div class="card-body">
+                        <h5 class="card-title">Poems</h5>
+                        <p class="card-text">Explore beautiful poems.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for Stories -->
+            <div class="col-md-4">
+                <div class="card" data-toggle="modal" data-target="#storiesModal">
+                    <img src="./images/stories.png" class="card-img-top"
+                        alt="Stories">
+                    <div class="card-body">
+                        <h5 class="card-title">Stories</h5>
+                        <p class="card-text">Read engaging and insightful stories.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for Grammar -->
+            <div class="col-md-4">
+                <div class="card" data-toggle="modal" data-target="#grammarModal">
+                    <img src="./images/grammar.jpg" class="card-img-top"
+                        alt="Grammar">
+                    <div class="card-body">
+                        <h5 class="card-title">Grammar</h5>
+                        <p class="card-text">Learn key grammar concepts and rules.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Poems Modal -->
+<div class="modal fade" id="poemsModal" tabindex="-1" role="dialog" aria-labelledby="poemsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="poemsModalLabel">Poems</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <b>The Crocodile by Lewis Carroll</b><br>
+                <i>
+                    How doth the little crocodile<br>
+                    Improve his shining tail,<br>
+                    And pour the waters of the Nile<br>
+                    On every golden scale!<br><br>
+                    How cheerfully he seems to grin,<br>
+                    How neatly spreads his claws,<br>
+                    And welcomes little fishes in,<br>
+                    With gently smiling jaws!
+                </i>
+                <hr>
+                <b>Analysis:</b>
+                <p>
+                    This poem is a playful satire of Isaac Watts' moralistic poem, "Against Idleness and Mischief." 
+                    Lewis Carroll uses irony to depict a crocodile that appears cheerful while being predatory.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="courses.html" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Stories Modal -->
+<div class="modal fade" id="storiesModal" tabindex="-1" role="dialog" aria-labelledby="storiesModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="storiesModalLabel">Stories</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <b>The Boy Who Cried Wolf</b>
+                <p>
+                    A young shepherd boy falsely cried "Wolf!" to fool the villagers. When a real wolf came, no one believed him.
+                </p>
+                <hr>
+                <b>Lesson:</b>
+                <p>
+                    This story teaches the importance of honesty and trust.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="courses.html" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Grammar Modal -->
+<div class="modal fade" id="grammarModal" tabindex="-1" role="dialog" aria-labelledby="grammarModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="grammarModalLabel">Grammar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Understanding Grammar Rules</h5>
+                <ul>
+                    <li><b>Nouns:</b> Words that name people, places, or things.</li>
+                    <li><b>Verbs:</b> Words that express action or a state of being.</li>
+                    <li><b>Adjectives:</b> Words that describe nouns.</li>
+                </ul>
+                <hr>
+                <h5>Common Grammar Mistakes:</h5>
+                <ul>
+                    <li><b>Its vs. It’s:</b> "Its" is possessive, while "it’s" means "it is".</li>
+                    <li><b>There, Their, They’re:</b> Different uses based on meaning.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <a href="courses.html" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <!-- Full version of jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

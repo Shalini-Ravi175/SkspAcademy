@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Lessons</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("images/bg_1.jpg");
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .row {
+            margin-top: 150px;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 80px;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Hover effect for cards */
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Select a Sport</h1>
+
+        <!-- Card Group for selection -->
+        <div class="row">
+            <!-- Card for Football -->
+            <div class="col-md-4">
+                <div class="card" data-toggle="modal" data-target="#footballModal">
+                    <img src="./images/football.jpg" class="card-img-top"
+                        alt="Football">
+                    <div class="card-body">
+                        <h5 class="card-title">Football</h5>
+                        <p class="card-text">Learn the fundamentals of football.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for Basketball -->
+            <div class="col-md-4">
+                <div class="card" data-toggle="modal" data-target="#basketballModal">
+                    <img src="./images/basketball.jpg" class="card-img-top"
+                        alt="Basketball">
+                    <div class="card-body">
+                        <h5 class="card-title">Basketball</h5>
+                        <p class="card-text">Master the skills of basketball.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for Cricket -->
+            <div class="col-md-4">
+                <div class="card" data-toggle="modal" data-target="#cricketModal">
+                    <img src="./images/cricket.jpg" class="card-img-top"
+                        alt="Cricket">
+                    <div class="card-body">
+                        <h5 class="card-title">Cricket</h5>
+                        <p class="card-text">Learn the techniques of cricket.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Modals -->
+    <!-- Football Modal -->
+    <div class="modal fade" id="footballModal" tabindex="-1" role="dialog" aria-labelledby="footballModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="footballModalLabel">Football</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <b>Football Rules and Regulations:</b><br>
+                    1. Each team has 11 players, including a goalkeeper.<br>
+                    2. A match consists of two 45-minute halves.<br>
+                    3. The game starts with a kickoff and is played using a round ball.<br>
+                    4. Offside rules apply to prevent unfair advantages.<br>
+                    5. Fouls and misconduct result in free kicks, penalty kicks, or yellow/red cards.<br>
+                </div>
+                <div class="modal-footer">
+                    <a href="courses.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Basketball Modal -->
+    <div class="modal fade" id="basketballModal" tabindex="-1" role="dialog" aria-labelledby="basketballModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="basketballModalLabel">Basketball</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <b>Basketball Rules and Regulations:</b><br>
+                    1. Each team consists of five players.<br>
+                    2. The game is played in four quarters of 12 minutes each.<br>
+                    3. Dribbling and passing are essential for ball movement.<br>
+                    4. Fouls result in free throws or loss of possession.<br>
+                    5. The team with the most points at the end wins.<br>
+                </div>
+                <div class="modal-footer">
+                    <a href="courses.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cricket Modal -->
+    <div class="modal fade" id="cricketModal" tabindex="-1" role="dialog" aria-labelledby="cricketModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cricketModalLabel">Cricket</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <b>Cricket Rules and Regulations:</b><br>
+                    1. Each team has 11 players, including batsmen and bowlers.<br>
+                    2. The game consists of innings where teams bat and bowl.<br>
+                    3. Runs are scored by hitting the ball and running between wickets.<br>
+                    4. Bowlers aim to get batsmen out using various techniques.<br>
+                    5. The team with the most runs at the end of the match wins.<br>
+                </div>
+                <div class="modal-footer">
+                    <a href="courses.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

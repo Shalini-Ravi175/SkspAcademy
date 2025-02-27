@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Registration -->
+
+    <section class="p-3 p-md-4 p-xl-5">
+        <div class="container">
+            <div class="card border-light-subtle shadow-sm">
+                <div class="row g-0">
+                    <div class="col-12 col-md-6 text-bg-primary">
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <div class="col-10 col-xl-8 py-3">
+                                <img class="img-fluid rounded mb-4" src="./images/bg_5.jpg" width="550" height="250"
+                                    alt="BootstrapBrain Logo">
+                                <hr class="border-primary-subtle mb-4">
+                                <h2 class="h1 mb-4">We make digital products that drive you to stand out.</h2>
+                                <p class="lead m-0">We write words, take photos, make videos, and interact with
+                                    artificial intelligence.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="card-body p-3 p-md-4 p-xl-5">
+                            <h2 class="h3">Registration Form</h2>
+                            <h3 class="fs-6 fw-normal text-secondary m-0">Enter your details to register</h3>
+                            <form action="./courses.html" method="post" id="registrationForm" name="reg-form" >
+                                <div class="row gy-3 gy-md-4">
+                                    <div class="col-12">
+                                        <label for="firstName" class="form-label">First Name <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="firstName" id="firstName"
+                                            placeholder="First Name" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="lastName" class="form-label">Last Name <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="lastName" id="lastName"
+                                            placeholder="Last Name" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="email" class="form-label">Email <span
+                                                class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="name@example.com" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="password" class="form-label">Password <span
+                                                class="text-danger">*</span></label>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="Set password for this website" required>
+                                    </div>
+                                    <!-- <div class="col-12">
+                                        <input class="form-check-input" type="checkbox" id="iAgree" required>
+                                        <label class="form-check-label text-secondary" for="iAgree">
+                                            I agree to the <a href="#!" class="link-primary text-decoration-none">terms
+                                                and conditions</a>
+                                        </label>
+                                    </div> -->
+                                    <div class="col-12">
+                                        <input type="submit" id="submit" class="btn btn-primary py-3 px-5"
+                                            value="Register"  />
+                                    </div>
+                                </div>
+                            </form>
+
+
+                            <hr class="mt-5 mb-4 border-secondary-subtle">
+                            <p class="m-0 text-secondary text-center">Already have an account?
+                                <a href="login.html" class="link-primary text-decoration-none">Sign in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./googlesheet.js"></script>
+
+
+    <!-- <script>
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            let formData = {
+                firstName: document.getElementById("firstName").value.trim(),
+                lastName: document.getElementById("lastName").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                password: document.getElementById("password").value.trim()
+            };
+
+            // Simple client-side validation
+            if (!formData.firstName || !formData.lastName || !formData.email || !formData.password) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            alert("Thank you for registering, " + formData.firstName + "! Your data is being submitted."); // Show alert before sending data
+
+            document.getElementById("registrationForm").reset(); // Reset the form
+            window.location.href = "courses.html";
+
+
+        });
+    </script> -->
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                            <input type="text" class="form-control" id="usrname" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                            <input type="password" class="form-control" id="psw" placeholder="Enter password" required>
+                        </div>
+                        <!--<div class="checkbox">
+                            <label><input type="checkbox" value="" checked> Remember me</label>
+                        </div> -->
+                        <button type="submit" class="btn btn-success btn-block"><span
+                                class="glyphicon glyphicon-off"></span> Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                    <!-- <p>Not a member? <a href="register.py">Sign Up</a></p> -->
+                    <!-- <p>Forgot <a href="#">Password?</a></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Handle login form submission
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get user input values
+            const username = document.getElementById('usrname').value;
+            const password = document.getElementById('psw').value;
+
+            // Check if username and password match
+            if (username === "Surya" && password === "12345") {
+                alert('Login successful!');
+
+                // Hide the modal after login
+                const modalElement = document.getElementById('myModal');
+                const modal = bootstrap.Modal.getInstance(modalElement); // Get Bootstrap modal instance
+                modal.hide();
+
+                // Redirect to courses page (Optional)
+                window.location.href = "courses.html";
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        });
+    </script>
+
+
+    <script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
